@@ -1,0 +1,1521 @@
+ <div id="day1" class="report">
+  <h3>Training Day 1 Report</h3>
+  <p>📅 Date: 19 June 2025</p>
+
+  <h4>Topic: Python Variables and Single-Value Containers</h4>
+  <p>On Day 1, the training focused on understanding Python variables, memory allocation, and single-value containers like strings. This is foundational for all Python programs and memory management.</p>
+
+  <h4>Key Concepts and Explanation</h4>
+  <ol>
+    <li>
+      <strong>Variables in Python:</strong>
+      <ul>
+        <li>Variables are references to objects stored in memory.</li>
+        <li>Example: <code>instagram_user_name = "auribises"</code></li>
+        <li>Memory Insight: The variable is stored in <strong>STACK</strong> and the actual object ("auribises") in <strong>HEAP</strong>.</li>
+        <li>Reference checking: <code>id(instagram_user_name)</code> gives the unique identifier in memory.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Read Operation:</strong>
+      <ul>
+        <li>Access the value and type of a variable using <code>print()</code> and <code>type()</code>.</li>
+        <li>Example:
+          <pre>
+print(instagram_user_name, id(instagram_user_name))
+print(type(instagram_user_name))
+          </pre>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Reference Copy:</strong>
+      <ul>
+        <li>Copy a variable reference to another variable: <code>another_user = instagram_user_name</code></li>
+        <li>Both variables point to the same object in memory.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Update Operation:</strong>
+      <ul>
+        <li>Update a variable: <code>instagram_user_name = "new_name"</code></li>
+        <li>Python creates a new object in memory and updates the reference.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Delete Operation:</strong>
+      <ul>
+        <li>Delete a variable: <code>del instagram_user_name</code></li>
+        <li>Accessing it afterward raises <code>NameError</code>.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h4>Python Code Example:</h4>
+  <pre>
+# Single Value Container Example
+instagram_user_name = "auribises"
+print(instagram_user_name, id(instagram_user_name), type(instagram_user_name))
+
+user_name = "k_ishant"
+print(user_name, id(user_name), type(user_name))
+
+another_user = user_name
+print(another_user, id(another_user), type(another_user))
+
+# Update operation
+user_name = "anaya"
+print(user_name, id(user_name), type(user_name))
+
+# Delete operation
+del another_user
+del user_name
+  </pre>
+
+  <h4>Key Takeaways:</h4>
+  <ul>
+    <li>Variables in Python are references to objects stored in memory.</li>
+    <li>Understanding stack and heap memory helps with debugging and memory management.</li>
+    <li>Single-value containers like strings are immutable in Python.</li>
+    <li>CRUD operations (Create, Read, Update, Delete) form the basic foundation of Python data handling.</li>
+  </ul>
+
+  <p>By: Amanjot Singh URN: 2302851 CRN: 2315262</p>
+</div>
+<div id="day2" class="report">
+  <h3>Training Day 2 Report</h3>
+  <p>📅 Date: 20 June 2025</p>
+  
+  <h4>Topic: Python Multi-Value Containers and Input/Output</h4>
+  <p>On Day 2, the training focused on Python’s multi-value containers, their properties, and how to model real-world data using Python. Understanding these containers is crucial for efficient data storage, retrieval, and manipulation in Python programs.</p>
+  
+  <h4>Key Concepts and Explanation</h4>
+  <ol>
+    <li>
+      <strong>Tuple:</strong>
+      <ul>
+        <li>Definition: Tuples are ordered, indexed, and <strong>immutable</strong> containers.</li>
+        <li>Example: <code>names = ("john", "jennie", "jim", "jack", "joe")</code></li>
+        <li>Access: Elements can be accessed by index: <code>names[2]</code> → "jim"</li>
+        <li>Immutability: Elements cannot be changed or deleted. Attempting to do so raises an error.</li>
+        <li>Memory Insight: <code>id()</code> shows the unique identifier of the tuple or individual elements.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>List:</strong>
+      <ul>
+        <li>Definition: Lists are ordered, indexed, and <strong>mutable</strong> containers.</li>
+        <li>Example: <code>names = ["john", "jennie", "jim", "jack", "joe"]</code></li>
+        <li>Operations: Update elements (<code>names[2] = "fionna"</code>), delete elements (<code>del names[1]</code>), and append new items (<code>names.append("george")</code>).</li>
+        <li>Usage: Lists are ideal when you need to store and modify a collection of items dynamically.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Set:</strong>
+      <ul>
+        <li>Definition: Sets are <strong>unordered</strong> collections that do not allow duplicate values and do not support indexing.</li>
+        <li>Example: <code>john_followers = {"fionna", "jack", "harry", "sia", "kim"}</code></li>
+        <li>Operations: Intersection to find common elements between sets: <code>john_followers.intersection(fionna_followers)</code></li>
+        <li>Conversion: Sets can be converted to lists for indexing or ordered operations: <code>list(mutual_followers)</code></li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Dictionary:</strong>
+      <ul>
+        <li>Definition: Dictionaries store <strong>key-value pairs</strong> and are mutable.</li>
+        <li>Example: <code>students = {101: "john", 102: "jennie", 103: "fionna"}</code></li>
+        <li>Operations: Access (<code>students[101]</code>), update (<code>students[101] = "Leo"</code>), and delete keys.</li>
+        <li>Usage: Dictionaries are useful for storing structured data with unique identifiers or attributes.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h4>Case Studies and Real-World Modeling:</h4>
+  <ul>
+    <li>
+      <strong>Zomato / MMT / WhatsApp:</strong> Showed how to model real-world applications using Python containers.
+      <ul>
+        <li>Menu, restaurant, hotel, and conversation data structures were created using lists and dictionaries.</li>
+        <li>Demonstrated handling nested data like <code>menu = [dish1, dish2, dish3]</code> and <code>conversation = [{"from": ..., "text": ...}, ...]</code></li>
+      </ul>
+    </li>
+  </ul>
+
+  <h4>Input/Output Statements:</h4>
+  <ul>
+    <li>Python input statements allow user interaction: <code>name = input("Enter Your Name: ")</code></li>
+    <li>Type conversion: Convert string input to integer using <code>int(input())</code></li>
+    <li>Read/Display data: <code>print("NAME:", name, type(name))</code> and <code>print("AGE:", age, type(age))</code></li>
+    <li>Demonstrated capturing user data dynamically and working with multi-value containers.</li>
+  </ul>
+
+  <h4>Key Takeaways:</h4>
+  <ul>
+    <li>Python provides multiple containers for storing collections of data: tuple, list, set, and dictionary.</li>
+    <li>Choosing the right container depends on mutability, ordering, and indexing requirements.</li>
+    <li>Real-world applications can be effectively modeled using Python containers.</li>
+    <li>User input and output handling is essential for interactive Python programs.</li>
+    <li>Nested data structures allow complex real-world data representation in Python.</li>
+  </ul>
+
+  <p>By: Amanjot Singh URN 2302851 CRN 2315262</p>
+</div>
+
+
+  <div id="day3" class="report">
+  <h3>Training Day 3 Report</h3>
+  <p>📅 Date: 23 June 2025</p>
+
+  <h4>Topic: Python Operators and Conditional Statements</h4>
+  <p>The focus of Day 3 training was on Python operators, conditional logic, and practical applications such as implementing promo code systems. Understanding operators and conditional statements is essential for performing calculations, making decisions, and controlling the program flow.</p>
+
+  <h4>Key Concepts and Explanation</h4>
+  <ol>
+    <li>
+      <strong>Arithmetic Operators:</strong>
+      <ul>
+        <li>Operators: <code>+</code>, <code>-</code>, <code>*</code>, <code>**</code>, <code>/</code>, <code>//</code>, <code>%</code></li>
+        <li>Usage: Performing calculations such as product pricing with taxes:
+          <code>price_to_pay = product_price + (product_price * taxes)</code></li>
+        <li>Integer vs Floating Point Division: <code>//</code> gives integer result, <code>/</code> gives floating point.</li>
+        <li>Exponentiation: <code>**</code> operator for powers, e.g., <code>2**3 = 8</code></li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Assignment Operators:</strong>
+      <ul>
+        <li>Operators: <code>=, +=, -=, *=, /=, %=, //=, **=</code></li>
+        <li>Usage: Update values concisely. Example: <code>age += 3</code> is same as <code>age = age + 3</code></li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Increment and Decrement:</strong>
+      <ul>
+        <li>Python does not support <code>++</code> or <code>--</code> operators.</li>
+        <li>Instead, use <code>+= 1</code> or <code>-= 1</code> to increment or decrement values.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Conditional Operators:</strong>
+      <ul>
+        <li>Operators: <code>==, !=, >, <, >=, <=</code></li>
+        <li>Usage: Compare values for decision making, e.g., <code>e_wallet >= cab_fare</code></li>
+        <li>Logical Operators: <code>and, or, not</code> combine multiple conditions.</li>
+        <li>Example: <code>(email == "john@example.com") and (password == "john123")</code> evaluates login status.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Membership and Identity Operators:</strong>
+      <ul>
+        <li>Identity Operators: <code>is</code>, <code>is not</code> check if two variables reference the same object.</li>
+        <li>Membership Operators: <code>in</code>, <code>not in</code> check presence of a value in a container.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Bitwise Operators:</strong>
+      <ul>
+        <li>Operators: <code>&, |, ^, >>, <<</code></li>
+        <li>Usage: Perform operations at the binary level. Example: <code>num1 & num2</code> gives bitwise AND.</li>
+        <li>Shift Operators: <code>>></code> right shift, <code><<</code> left shift. Useful for low-level data manipulation.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Conditional Statements:</strong>
+      <ul>
+        <li>Types: <strong>Simple if/else</strong>, <strong>Nested if/else</strong>, <strong>Ladder if/elif/else</strong></li>
+        <li>Example: Applying promo codes based on the purchase amount using nested conditions.</li>
+        <li>Best Practice: Always handle invalid cases and edge conditions to avoid logical errors.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h4>Case Study: Zomato Promo Code Application</h4>
+  <ul>
+    <li>Objective: Apply the correct promo code to save the user the maximum amount.</li>
+    <li>Promo Codes:
+      <ul>
+        <li><code>WELCOME50</code>: 50% off up to ₹100 for orders ≥ ₹159</li>
+        <li><code>ZOMPAYTM</code>: 20% off up to ₹50 + ₹25 cashback for orders ≥ ₹299</li>
+      </ul>
+    </li>
+    <li>Implementation: 
+      <ul>
+        <li>Use input statements to take total amount and promo code from user.</li>
+        <li>Check conditions using nested and ladder if/elif statements.</li>
+        <li>Calculate discount and final amount to pay.</li>
+        <li>Provide feedback to user if amount is insufficient or promo code is invalid.</li>
+      </ul>
+    </li>
+    <li>Example Output:
+      <ul>
+        <li>"Promo Code Applied Successfully. Please Pay: ₹120"</li>
+        <li>"Amount is lesser for Promo Code. Please Pay: ₹100"</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h4>Key Takeaways:</h4>
+  <ul>
+    <li>Operators are the building blocks of all Python calculations and comparisons.</li>
+    <li>Conditional statements control the flow of execution based on logic.</li>
+    <li>Bitwise operators are essential for low-level programming and performance optimization.</li>
+    <li>Practical case studies like promo code applications help understand real-world application of Python logic.</li>
+    <li>Always consider edge cases and validate user input for robustness.</li>
+  </ul>
+
+  <p>By: Amanjot Singh URN 2302851 CRN 2315262</p>
+</div>
+<div id="day4" class="report">
+  <h3>Training Day 4 Report</h3>
+  <p>📅 Date: 24 June 2025</p>
+
+  <h4>Topic: Loops, Functions, and Searching</h4>
+  <p>The focus of Day 4 was on iteration in Python using loops, searching within data, and implementing functions. Loops allow repeating a block of code efficiently without duplication. We also explored practical examples and algorithms.</p>
+
+  <h4>Key Concepts and Explanation</h4>
+  <ol>
+    <li>
+      <strong>Loops in Python:</strong>
+      <ul>
+        <li><code>for</code> loop: Iterate over sequences like lists, strings, or ranges.</li>
+        <li><code>while</code> loop: Execute code repeatedly as long as a condition is true.</li>
+        <li>Example: Searching an employee name in a list using a <code>for</code> loop.</li>
+        <li>Excluding Saturdays and Sundays: Loop-based operations can skip weekends in real-world applications.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Linear Search Algorithm:</strong>
+      <ul>
+        <li>Iterate over each element and compare with target value.</li>
+        <li>Use a flag variable to indicate if the value is found.</li>
+        <li>Break the loop once the element is found to improve efficiency.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Break and Continue Statements:</strong>
+      <ul>
+        <li><code>break</code> stops the current loop immediately.</li>
+        <li><code>continue</code> skips the current iteration and moves to the next one.</li>
+        <li>Example: Skipping indices less than 5 or stopping elevator simulation at a specific floor.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Finding Maximum Values in Lists:</strong>
+      <ul>
+        <li>Iterate over a list and compare each element to find the maximum.</li>
+        <li>Example lists: <code>product_prices</code>, <code>team_points</code>, <code>salaries</code>.</li>
+        <li>Function approach: Create reusable functions like <code>get_max(data)</code> for any dataset.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Functions:</strong>
+      <ul>
+        <li>Defined using <code>def</code> keyword.</li>
+        <li>Example: <code>f(x) = x*x + 1</code></li>
+        <li>Return values can be reused in different parts of the program.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Case Study: Brick Wall Problem</strong>
+      <ul>
+        <li>Objective: Determine who places the last brick (John or Jack) based on sequential placement.</li>
+        <li>Used <code>for</code> loop and conditionals to simulate brick placement.</li>
+        <li>Demonstrates logic implementation, loop control, and edge case handling.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h4>Key Takeaways:</h4>
+  <ul>
+    <li>Loops help reduce repetitive code and implement iteration logic.</li>
+    <li>Break and continue statements control loop flow efficiently.</li>
+    <li>Functions promote code reusability and modularity.</li>
+    <li>Searching and max-finding algorithms are foundational for data handling.</li>
+    <li>Practical case studies help relate loops and conditions to real-world problems.</li>
+  </ul>
+
+  <p>By: Amanjot Singh URN 2302851 CRN 2315262</p>
+</div>
+<div id="day5" class="report">
+  <h3>Training Day 5 Report</h3>
+  <p>📅 Date: 25 June 2025</p>
+
+  <h4>Topic: Functions, Memory, and Recursion</h4>
+  <p>Day 5 focused on how Python handles functions, memory management, passing references, and recursion. Understanding these concepts is crucial for writing efficient and modular code.</p>
+
+  <h4>Key Concepts and Explanation</h4>
+  <ol>
+    <li>
+      <strong>Main Thread Execution:</strong>
+      <ul>
+        <li>Python executes any code in a script via the main thread by default.</li>
+        <li>Using <code>if __name__ == "__main__":</code> ensures that certain code runs only when the script is executed directly, not when imported.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Functions in Memory:</strong>
+      <ul>
+        <li>Functions are objects in memory and can be called multiple times.</li>
+        <li>Example: A <code>square(num)</code> function that computes square of a number.</li>
+        <li>Variables inside functions are local and have their own memory addresses.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Passing References:</strong>
+      <ul>
+        <li>Mutable objects (like lists) passed to functions can be modified inside the function.</li>
+        <li>Example: Squaring each element of a list inside a function updates the original list in memory.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Recursion:</strong>
+      <ul>
+        <li>A function calling itself is called recursion.</li>
+        <li>Example: <code>print_number(num)</code> prints numbers from 1 to 10 using recursion.</li>
+        <li>Recursion is useful for problems that can be broken into smaller, similar subproblems.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Recursive Max-Finding Function:</strong>
+      <ul>
+        <li>Function <code>get_max(numbers, length)</code> finds the maximum in a list recursively.</li>
+        <li>It compares the last element with the maximum of the rest of the list.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Assignment:</strong>
+      <ul>
+        <li>Implement Fibonacci series using recursion.</li>
+        <li>Example series: 0, 1, 1, 2, 3, 5, 8, ...</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h4>Key Takeaways:</h4>
+  <ul>
+    <li>Functions allow modular and reusable code.</li>
+    <li>Understanding how Python handles memory and references helps avoid unexpected behavior.</li>
+    <li>Recursion is a powerful tool for solving problems in a clean and elegant way.</li>
+    <li>Recursive algorithms can solve problems like max-finding, factorial, Fibonacci series, and tree traversal.</li>
+  </ul>
+
+  <p>By: Amanjot Singh URN 2302851 CRN 2315262</p>
+</div>
+<div id="day6" class="report">
+  <h3>Training Day 6 Report</h3>
+  <p>📅 Date: 26 June 2025</p>
+
+  <h4>Topic: Object-Oriented Programming (OOP)</h4>
+  <p>Day 6 focused on understanding Object-Oriented Programming concepts in Python, including classes, objects, attributes, reference copies, CRUD operations, constructors, and methods. OOP helps in modeling real-world entities efficiently.</p>
+
+  <h4>Key Concepts and Explanation</h4>
+  <ol>
+    <li>
+      <strong>Classes and Objects:</strong>
+      <ul>
+        <li>A class is a blueprint for creating objects.</li>
+        <li>An object is an instance of a class stored in memory.</li>
+        <li>Example: <code>Restaurant</code> class with attributes like name, phone, email, operating_hours, ratings, and category.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Reference Copy:</strong>
+      <ul>
+        <li>Assigning one object variable to another copies the reference, not the actual object.</li>
+        <li>Changes made via one reference affect all references pointing to that object.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>CRUD Operations on Objects:</strong>
+      <ul>
+        <li><strong>Create:</strong> Instantiate an object using <code>object = ClassName()</code>.</li>
+        <li><strong>Read:</strong> Access object attributes using <code>object.attribute</code>.</li>
+        <li><strong>Update:</strong> Modify attributes directly using assignment.</li>
+        <li><strong>Delete:</strong> Remove attributes using <code>del object.attribute</code> or delete object entirely using <code>del object</code>.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Constructor and Methods:</strong>
+      <ul>
+        <li>Constructors (<code>__init__</code>) initialize object attributes during creation.</li>
+        <li>Methods define behaviors of objects. Example: <code>show()</code> method in <code>Dish</code> class prints details of a dish.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Standardization in OOP:</strong>
+      <ul>
+        <li>Using constructors and methods ensures all objects follow the same structure and behavior.</li>
+        <li>Example: <code>Dish</code> class with attributes <code>name</code>, <code>price</code>, <code>ratings</code> and method <code>show()</code>.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Practical Exercises:</strong>
+      <ul>
+        <li>Created Restaurant objects and manipulated attributes.</li>
+        <li>Created Dish objects using constructor and displayed data using methods.</li>
+        <li>Observed behavior of reference copies and attribute updates.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h4>Key Takeaways:</h4>
+  <ul>
+    <li>Classes and objects help model real-world entities in Python.</li>
+    <li>Reference copying allows multiple variables to point to the same object, reflecting changes across all references.</li>
+    <li>CRUD operations enable dynamic manipulation of object data.</li>
+    <li>Constructors and methods standardize object creation and behavior for consistency.</li>
+  </ul>
+
+  <p>By: Amanjot Singh URN 2302851 CRN 2315262</p>
+</div>
+<div id="day7" class="report">
+  <h3>Training Day 7 Report</h3>
+  <p>📅 Date: 27 June 2025</p>
+
+  <h4>Topic: OOP - Relationship Mapping, Shopping Cart, and Menu Modeling</h4>
+  <p>Day 7 focused on advanced Object-Oriented Programming concepts such as relationship mapping between classes, nested objects, and implementing a shopping cart using OOP principles. The session also demonstrated how to model real-world applications like restaurants and e-commerce platforms in Python.</p>
+
+  <h4>Key Concepts and Explanation</h4>
+  <ol>
+    <li>
+      <strong>Relationship Mapping in OOP:</strong>
+      <ul>
+        <li>Understanding "Has-A" relationships between classes (composition).</li>
+        <li>Example: A <code>Restaurant</code> has a <code>Menu</code>, and a <code>Menu</code> has many <code>Dish</code> objects.</li>
+        <li>Helps model real-world entities in a structured manner.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Classes and Composition:</strong>
+      <ul>
+        <li>Defined classes like <code>Dish</code>, <code>Menu</code>, <code>Restaurant</code>, <code>Category</code>, and <code>Product</code>.</li>
+        <li>Nested classes allow building complex structures: Menus contain Categories, Categories contain Products.</li>
+        <li>Methods like <code>show()</code> display object details recursively.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Practical Implementation - Restaurant Example:</strong>
+      <ul>
+        <li>Created multiple <code>Dish</code> objects and added them to a <code>Menu</code> object.</li>
+        <li>Created a <code>Restaurant</code> object that includes the menu.</li>
+        <li>Used <code>restaurant.show()</code> to display the full restaurant information along with dishes.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Practical Implementation - E-commerce Menu Example:</strong>
+      <ul>
+        <li>Modeled Amazon-like menu system: <code>Menu</code> → <code>Category</code> → <code>Product</code>.</li>
+        <li>Allowed user to navigate menus, select categories, and view products programmatically.</li>
+        <li>Demonstrated handling of many-to-many relationships using nested lists and objects.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Shopping Cart Implementation:</strong>
+      <ul>
+        <li>Implemented cart using lists for item names, quantities, and prices.</li>
+        <li>Applied promo codes with conditions to calculate discounts.</li>
+        <li>Demonstrated integration of real-world logic (Zomato offers) with OOP structures.</li>
+        <li>Assignment: Extend the shopping cart and menu using OOP for modularity and reusability.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h4>Key Takeaways:</h4>
+  <ul>
+    <li>Relationship mapping in OOP allows modeling complex systems efficiently.</li>
+    <li>Composition (Has-A relationship) is essential for building nested, real-world structures.</li>
+    <li>OOP helps in organizing code for restaurants, e-commerce menus, and shopping carts.</li>
+    <li>Using classes and objects increases code reusability and maintainability.</li>
+    <li>Methods like <code>show()</code> provide a clear way to display object data hierarchically.</li>
+  </ul>
+
+  <p>By: Amanjot Singh URN 2302851 CRN 2315262</p>
+</div>
+<div id="day8" class="report">
+  <h3>Training Day 8 Report</h3>
+  <p>📅 Date: 30 June 2025</p>
+
+  <h4>Topic: Circular Doubly Linked List and Playlist Management</h4>
+  <p>Day 8 focused on advanced data structures, specifically Circular Doubly Linked Lists (CDLL), and their application in managing playlists. This session emphasized linking nodes forward and backward and building reusable OOP structures.</p>
+
+  <h4>Key Concepts and Explanation</h4>
+  <ol>
+    <li>
+      <strong>Circular Doubly Linked List:</strong>
+      <ul>
+        <li>Each node contains data and two pointers: <code>next</code> and <code>previous</code>.</li>
+        <li>The <code>next</code> of the last node points to the head, and <code>previous</code> of the head points to the tail.</li>
+        <li>This allows iteration in both forward and backward directions without null references.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Song Class:</strong>
+      <ul>
+        <li>Represents a song object with attributes: <code>track</code>, <code>artists</code>, <code>duration</code>, <code>next</code>, and <code>previous</code>.</li>
+        <li>Method <code>show()</code> prints song details along with its next and previous links.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>PlayList Class:</strong>
+      <ul>
+        <li>Maintains the head and tail of the playlist and a <code>size</code> counter.</li>
+        <li><code>append()</code> method adds a song to the playlist while maintaining the circular doubly linked structure.</li>
+        <li><code>iterate(direction)</code> allows traversal in forward (default) or backward direction.</li>
+        <li>Supports potential future operations: insert at head, delete a song.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Practical Implementation:</strong>
+      <ul>
+        <li>Created multiple <code>Song</code> objects and appended them to a <code>PlayList</code> object.</li>
+        <li>Iterated forward from head and backward from tail to demonstrate circular traversal.</li>
+        <li>Verified integrity of links using <code>next</code> and <code>previous</code> pointers in each node.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Weekend Assignment:</strong>
+      <ul>
+        <li>Implement <code>insert()</code> to add songs at the head of the playlist.</li>
+        <li>Implement <code>delete(track)</code> to remove a song by its track name from the playlist.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h4>Key Takeaways:</h4>
+  <ul>
+    <li>Circular Doubly Linked Lists allow efficient forward and backward traversal without null checks.</li>
+    <li>OOP helps model real-world entities like songs and playlists in a structured and reusable manner.</li>
+    <li>Maintaining <code>head</code>, <code>tail</code>, and proper pointers ensures consistency in circular linked lists.</li>
+    <li>Extensible methods like insert and delete enhance the flexibility of the playlist system.</li>
+  </ul>
+
+  <p>By: Amanjot Singh URN 2302851 CRN 2315262</p>
+</div>
+<div id="day9" class="report">
+  <h3>Training Day 9 Report</h3>
+  <p>📅 Date: 1 July 2025</p>
+
+  <h4>Topic: Functions, *args, **kwargs, and Patient Queue using OOP</h4>
+  <p>Day 9 focused on advanced function concepts in Python, including reference copies, redefinition, variable arguments, and keyword arguments. Additionally, we implemented a Patient Queue using a doubly linked list structure with OOP principles.</p>
+
+  <h4>Key Concepts and Explanation</h4>
+  <ol>
+    <li>
+      <strong>Function References and Redefinition:</strong>
+      <ul>
+        <li>A function in Python is an object and can be assigned to other variables (<code>fun = compute_taxes</code>).</li>
+        <li>Functions can be redefined. Old definitions can be stored for reference (<code>old_compute_taxes = compute_taxes</code>).</li>
+        <li>Default arguments allow calling functions without providing all parameters.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Variable Arguments (*args and **kwargs):</strong>
+      <ul>
+        <li><code>*args</code> allows passing multiple positional arguments as a tuple.</li>
+        <li><code>**kwargs</code> allows passing multiple keyword arguments as a dictionary.</li>
+        <li>Example: <code>def fun(*args, **kwargs)</code> prints both.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Patient Class:</strong>
+      <ul>
+        <li>Represents a patient with attributes <code>name</code>, <code>age</code>, and <code>gender</code>.</li>
+        <li>Also includes <code>next</code> and <code>previous</code> for linking in a doubly linked list.</li>
+        <li><code>show()</code> method prints patient details.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>PatientQueue Class:</strong>
+      <ul>
+        <li>Implements a queue using a doubly linked list structure.</li>
+        <li><code>enqueue(patient)</code> adds a patient to the end of the queue.</li>
+        <li><code>dequeue()</code> removes the first patient from the queue.</li>
+        <li><code>iterate()</code> traverses the queue from head to tail and prints patient details.</li>
+        <li>Maintains <code>head</code>, <code>tail</code>, and <code>size</code> attributes.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Practical Implementation:</strong>
+      <ul>
+        <li>Created multiple <code>Patient</code> objects.</li>
+        <li>Added patients to the queue using <code>enqueue()</code>.</li>
+        <li>Removed patients using <code>dequeue()</code>, including handling empty queue gracefully.</li>
+        <li>Verified patient order and integrity by iterating the queue.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h4>Key Takeaways:</h4>
+  <ul>
+    <li>Functions are first-class objects in Python and can be assigned, passed, and redefined.</li>
+    <li>*args and **kwargs provide flexibility for variable and keyword arguments in functions.</li>
+    <li>Queues can be implemented efficiently using doubly linked lists in OOP.</li>
+    <li>Maintaining head, tail, and proper next/previous pointers ensures data consistency in linked structures.</li>
+  </ul>
+
+  <p>By: Amanjot Singh URN 2302851 CRN 2315262</p>
+</div>
+<div id="day10" class="report">
+  <h3>Training Day 10 Report</h3>
+  <p>📅 Date: 2 July 2025</p>
+
+  <h4>Topic: Screen Navigation Stack and Multi-Value Containers in Python</h4>
+  <p>Day 10 covered implementing a screen navigation stack using a doubly linked structure and explored Python’s multi-value containers, including lists, tuples, sets, strings, and dictionaries, along with their key properties.</p>
+
+  <h4>Key Concepts and Explanation</h4>
+  <ol>
+    <li>
+      <strong>ScreenInterface and Stack:</strong>
+      <ul>
+        <li><code>ScreenInterface</code> class represents a screen in an app with <code>title</code>, <code>next</code>, and <code>previous</code> pointers.</li>
+        <li><code>Stack</code> class implements stack operations (push, pop, iterate) using a doubly linked structure.</li>
+        <li>Stack supports <code>push()</code> to add a screen, <code>pop()</code> to remove the last screen, and <code>iterate()</code> to display screens from tail to head.</li>
+        <li>This models navigation history in mobile or web applications.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Multi-Value Containers:</strong>
+      <ul>
+        <li>Python supports <strong>sequences</strong>: list, tuple, set, string, and <strong>dictionary</strong> for key-value pairs.</li>
+        <li>Properties of sequences include:
+          <ul>
+            <li>Indexing (positive and negative)</li>
+            <li>Slicing (subsets of data)</li>
+            <li>Concatenation (combining sequences)</li>
+            <li>Multiplicity (repetition of elements)</li>
+            <li>Membership testing (checking if an element exists)</li>
+          </ul>
+        </li>
+        <li>Lists can be nested to create 2D or 3D structures, accessed via multiple indices.</li>
+        <li>Dictionaries provide fast key-based lookups and store heterogeneous data.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Practical Implementation:</strong>
+      <ul>
+        <li>Created a stack of screen interfaces and simulated pushing and popping screens.</li>
+        <li>Explored indexing, slicing, concatenation, multiplicity, and membership testing with lists.</li>
+        <li>Demonstrated accessing nested lists (2D, 3D) and retrieving dictionary values.</li>
+        <li>Highlighted the use of strings with indexing and slicing.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h4>Key Takeaways:</h4>
+  <ul>
+    <li>Doubly linked structures are useful for implementing stacks and queues in navigation systems.</li>
+    <li>Python lists and other sequences support powerful operations for data manipulation.</li>
+    <li>Dictionaries provide a flexible way to store and access structured data using keys.</li>
+    <li>Understanding indexing, slicing, and membership testing allows efficient access and modification of data.</li>
+  </ul>
+
+  <p>By: Amanjot Singh URN 2302851 CRN 2315262</p>
+</div>
+<div id="day11" class="report">
+  <h3>Training Day 11 Report</h3>
+  <p>📅 Date: 5 July 2025</p>
+
+  <h4>Topic: Exploring Python Collections – Lists, Sets, and Dictionaries</h4>
+  <p>Day 11 focused on exploring Python's built-in collections: <strong>lists, sets, and dictionaries</strong>. The session included their properties, common operations, and practical usage examples.</p>
+
+  <h4>Key Concepts and Explanation</h4>
+  <ol>
+    <li>
+      <strong>Lists:</strong>
+      <ul>
+        <li>Lists are ordered, mutable sequences.</li>
+        <li>Key operations:
+          <ul>
+            <li><code>append()</code> – add an element at the end</li>
+            <li><code>insert()</code> – add an element at a specific index</li>
+            <li><code>remove()</code>, <code>pop()</code>, <code>clear()</code> – delete elements</li>
+            <li><code>sort()</code>, <code>reverse()</code> – arrange elements</li>
+            <li>Other functions: <code>sum()</code>, <code>min()</code>, <code>max()</code>, <code>len()</code></li>
+          </ul>
+        </li>
+        <li>Lists can contain duplicate elements and allow indexing, slicing, and iteration.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Sets:</strong>
+      <ul>
+        <li>Sets are unordered, mutable collections of unique elements.</li>
+        <li>Key operations:
+          <ul>
+            <li><code>add()</code> – add element</li>
+            <li><code>pop()</code>, <code>remove()</code>, <code>discard()</code> – delete elements</li>
+            <li>Set operations: <code>union</code>, <code>intersection</code>, <code>difference</code>, <code>symmetric_difference</code></li>
+            <li>Subset and superset checks: <code>issubset()</code>, <code>issuperset()</code></li>
+          </ul>
+        </li>
+        <li>Useful for ensuring uniqueness and performing mathematical set operations.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Dictionaries:</strong>
+      <ul>
+        <li>Dictionaries store key-value pairs and are mutable.</li>
+        <li>Key operations:
+          <ul>
+            <li>Access elements with <code>[key]</code> or <code>.get(key)</code></li>
+            <li>Add or update values: <code>dict[key] = value</code></li>
+            <li>Remove elements: <code>pop()</code>, <code>del</code></li>
+            <li>Iterate over keys, values, or items</li>
+            <li>Convert dictionary items to a list of tuples using <code>items()</code></li>
+          </ul>
+        </li>
+        <li>Useful for fast lookups and storing structured data.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Iteration:</strong>
+      <ul>
+        <li>Lists, sets, and dictionaries can all be iterated using <code>for</code> loops.</li>
+        <li>Enhanced loops allow easy access to elements, keys, and values without explicit indexing.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h4>Key Takeaways:</h4>
+  <ul>
+    <li>Lists are ideal for ordered data with duplicates.</li>
+    <li>Sets are perfect for unique collections and mathematical operations.</li>
+    <li>Dictionaries allow mapping of keys to values with fast access.</li>
+    <li>Understanding collection operations and iteration is essential for efficient data handling in Python.</li>
+  </ul>
+
+  <p>By: Amanjot Singh URN 2302851 CRN 2315262</p>
+</div>
+<div id="day12" class="report">
+  <h3>Training Day 12 Report</h3>
+  <p>📅 Date: 9 July 2025</p>
+
+  <h4>Topic: Strings, String Operations, and Simple CRM App in Python</h4>
+  <p>Day 12 focused on Python strings, string manipulation techniques, and basic database-like operations using Python objects to simulate a CRM application.</p>
+
+  <h4>Key Concepts and Explanation</h4>
+  <ol>
+    <li>
+      <strong>Strings in Python:</strong>
+      <ul>
+        <li>Strings can be defined using single quotes (<code>'...' </code>), double quotes (<code>"..."</code>), or triple quotes for multi-line strings.</li>
+        <li>Raw strings (<code>r'...'</code>) treat backslashes literally.</li>
+        <li>Strings are <strong>immutable</strong> in Python. Any operation that modifies a string creates a new string in memory.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>String Operations:</strong>
+      <ul>
+        <li>Indexing and negative indexing to access characters.</li>
+        <li>Slicing to extract substrings.</li>
+        <li>Concatenation and multiplicity using <code>+</code> and <code>*</code>.</li>
+        <li>Membership testing with <code>in</code> and <code>not in</code>.</li>
+        <li>Methods like <code>upper()</code>, <code>lower()</code>, <code>capitalize()</code>, <code>title()</code>, <code>swapcase()</code>, <code>replace()</code>.</li>
+        <li>Trimming spaces or characters with <code>strip()</code>, <code>lstrip()</code>, <code>rstrip()</code>.</li>
+        <li>Searching for substrings using <code>find()</code> and <code>index()</code>.</li>
+        <li>Formatting strings using <code>format()</code> and <code>format_map()</code>.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Practical Example – WhatsApp Contact Search:</strong>
+      <ul>
+        <li>Created a list of contacts, each as a dictionary with <code>name</code>, <code>phone</code>, and <code>conversations</code>.</li>
+        <li>Implemented search functionality to find contacts by name or phone number.</li>
+        <li>Assignment: Extend search to conversations.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Simulating a Simple CRM App:</strong>
+      <ul>
+        <li>Created a <code>Customer</code> class with attributes: name, phone, email, age, gender.</li>
+        <li>Implemented a menu-based interface to:
+          <ul>
+            <li>Add a new customer</li>
+            <li>View customer details</li>
+            <li>Update or delete customer (assignment)</li>
+          </ul>
+        </li>
+        <li>Demonstrated persistence of objects within the program (simulation, no real database yet).</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h4>Key Takeaways:</h4>
+  <ul>
+    <li>Understanding string operations is essential for data manipulation and search operations.</li>
+    <li>Python dictionaries are useful for structured data storage.</li>
+    <li>Classes and objects can simulate real-world applications like CRM systems.</li>
+    <li>Menu-driven interfaces are a basic way to interact with users in Python programs.</li>
+  </ul>
+
+  <p>By: Amanjot Singh URN 2302851 CRN 2315262</p>
+</div>
+<div id="day13" class="report">
+  <h3>Training Day 13 Report</h3>
+  <p>📅 Date: 14 July 2025</p>
+
+  <h4>Topic: SQL Basics and Python-MySQL Integration</h4>
+  <p>Day 13 focused on creating and manipulating databases in SQL and integrating Python programs with MySQL for CRUD operations.</p>
+
+  <h4>Key Concepts and Explanation</h4>
+  <ol>
+    <li>
+      <strong>SQL Database and Table Commands:</strong>
+      <ul>
+        <li>Creating a database: <code>CREATE DATABASE gw2023pds1;</code></li>
+        <li>Viewing existing databases: <code>SHOW DATABASES;</code></li>
+        <li>Selecting a database: <code>USE gw2023pds1;</code></li>
+        <li>Creating a table: 
+          <pre>
+CREATE TABLE Customer(
+    cid INT PRIMARY KEY AUTO_INCREMENT,
+    name TEXT,
+    phone TEXT,
+    email TEXT
+);</pre>
+        </li>
+        <li>Viewing table structure: <code>DESCRIBE Customer;</code></li>
+        <li>Inserting records: 
+          <pre>
+INSERT INTO Customer VALUES(NULL, 'John', '+91 99999 11111', 'john@example.com');</pre>
+        </li>
+        <li>Retrieving data: <code>SELECT * FROM Customer;</code></li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Python-MySQL Integration:</strong>
+      <ul>
+        <li>Python library used: <code>mysql.connector</code> (imported as <code>db</code>).</li>
+        <li>Steps to interact with the database:
+          <ol>
+            <li>Create a connection to the database using <code>db.connect()</code>.</li>
+            <li>Obtain a cursor object to perform SQL operations.</li>
+            <li>Create and execute SQL statements from Python.</li>
+            <li>Commit changes to save data permanently in the database.</li>
+          </ol>
+        </li>
+        <li>Example: Insert a new customer from Python using formatted SQL strings.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Class-Based Data Input:</strong>
+      <ul>
+        <li>Defined a <code>Customer</code> class to collect customer details interactively via <code>input()</code>.</li>
+        <li>Used <code>vars()</code> to get the dictionary of object attributes for dynamic SQL insertion.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h4>Key Takeaways:</h4>
+  <ul>
+    <li>Understanding basic SQL commands is essential for database creation, table management, and data retrieval.</li>
+    <li>Python can interact with MySQL using the <code>mysql.connector</code> module to perform CRUD operations.</li>
+    <li>Using classes and <code>vars()</code> allows dynamic mapping of object data to SQL queries.</li>
+    <li>Always commit transactions to save changes permanently in the database.</li>
+  </ul>
+
+  <p>By: Amanjot Singh URN 2302851 CRN 2315262</p>
+</div>
+<div id="day14" class="report">
+  <h3>Training Day 14 Report</h3>
+  <p>📅 Date: 16 July 2025</p>
+
+  <h4>Topic: VetsApp – Customer Management with Python and MySQL</h4>
+  <p>Day 14 focused on building a Python application for a veterinary clinic to manage customers, integrating Object-Oriented Programming principles with MySQL database operations.</p>
+
+  <h4>Key Concepts and Explanation</h4>
+  <ol>
+    <li>
+      <strong>OOP Design for VetsApp:</strong>
+      <ul>
+        <li>Identified key objects:
+          <ul>
+            <li><strong>Customer:</strong> name, phone, email, age, gender, address, createdon</li>
+            <li><strong>Pet:</strong> name, age, weight, breed, gender, createdon</li>
+            <li><strong>Consultation:</strong> customer, pet, problem, heartrate, temperature, medicines, createdon</li>
+          </ul>
+        </li>
+        <li>Relationships:
+          <ul>
+            <li>1 Customer can have multiple Pets.</li>
+            <li>1 Customer can have multiple Consultations for multiple Pets.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Python Classes:</strong>
+      <ul>
+        <li><code>Customer</code> class with methods:
+          <ul>
+            <li><code>read_customer_data()</code> – Collect customer input from the user.</li>
+            <li><code>get_insert_sql_query()</code> – Returns SQL for inserting customer.</li>
+            <li><code>get_customers_sql_query()</code> – Returns SQL to select customer(s).</li>
+            <li><code>get_delete_sql_query()</code> – Returns SQL to delete customer.</li>
+            <li><code>get_update_sql_query()</code> – Returns SQL to update customer details.</li>
+          </ul>
+        </li>
+        <li>All customer objects store data like <code>cid</code>, <code>name</code>, <code>phone</code>, <code>email</code>, <code>age</code>, <code>gender</code>, <code>address</code>, <code>createdon</code>.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Database Integration:</strong>
+      <ul>
+        <li>Class <code>DBHelper</code> manages connection with MySQL database.</li>
+        <li>Methods:
+          <ul>
+            <li><code>execute_sql(sql)</code> – Executes INSERT, UPDATE, DELETE commands.</li>
+            <li><code>execute_select_sql(sql)</code> – Executes SELECT commands and returns fetched rows.</li>
+          </ul>
+        </li>
+        <li>Used <code>mysql.connector</code> to connect Python with MySQL.</li>
+        <li>Tabulate library was used to display query results in a readable table format.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Application Features Implemented:</strong>
+      <ul>
+        <li>Add New Customer</li>
+        <li>Update Existing Customer</li>
+        <li>Delete Customer</li>
+        <li>View All Customers</li>
+        <li>View Customer by Phone</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h4>Key Takeaways:</h4>
+  <ul>
+    <li>Practical integration of Python classes with a MySQL database for CRUD operations.</li>
+    <li>OOP principles allow clean and maintainable design for complex applications.</li>
+    <li>Displaying results in a tabular format improves readability for end-users.</li>
+    <li>Dynamic SQL generation from object attributes ensures flexibility in database operations.</li>
+  </ul>
+
+  <p>By: Amanjot Singh URN 2302851</p>
+</div>
+<div id="day15" class="report">
+  <h3>Training Day 15 Report</h3>
+  <p>📅 Date: 21 July 2025</p>
+
+  <h4>Topic: VetsApp – Pet Management with Python and MySQL</h4>
+  <p>Day 15 focused on extending the VetsApp to manage Pets for Customers, integrating Object-Oriented Programming with database operations in MySQL.</p>
+
+  <h4>Key Concepts and Explanation</h4>
+  <ol>
+    <li>
+      <strong>OOP Design for Pets:</strong>
+      <ul>
+        <li>Identified key object:
+          <ul>
+            <li><strong>Pet:</strong> pid, name, age, weight, breed, gender, cid (customer id), createdon</li>
+          </ul>
+        </li>
+        <li>Relationship:
+          <ul>
+            <li>1 Customer can have multiple Pets (foreign key <code>cid</code> in Pet table references Customer).</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Python Class:</strong>
+      <ul>
+        <li><code>Pet</code> class with methods:
+          <ul>
+            <li><code>read_pet_data()</code> – Collect pet input from the user.</li>
+            <li><code>get_insert_sql_query()</code> – Returns SQL query to insert pet into database.</li>
+            <li><code>get_pets_sql_query()</code> – Returns SQL query to fetch all pets or pets of a specific customer.</li>
+            <li><code>get_delete_sql_query()</code> – Returns SQL query to delete a pet.</li>
+            <!-- Note: update method is planned but commented out for future implementation -->
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Database Integration:</strong>
+      <ul>
+        <li>Created <code>Pet</code> table in MySQL with foreign key relationship to Customer table.</li>
+        <li>SQL Queries dynamically generated from object attributes using Python <code>vars()</code>.</li>
+        <li>Ensures data persistence and referential integrity for customers and their pets.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Application Features Planned/Implemented:</strong>
+      <ul>
+        <li>Add New Pet for a Customer</li>
+        <li>View Pets of a Customer</li>
+        <li>Delete Pet</li>
+        <li>Update Pet details (planned for future days)</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h4>Key Takeaways:</h4>
+  <ul>
+    <li>OOP allows modular design: Customers and Pets are separate classes with clear responsibilities.</li>
+    <li>Foreign key relationships in SQL enforce data integrity.</li>
+    <li>Dynamic SQL generation from Python objects makes code reusable and flexible.</li>
+    <li>Combining Python input methods with SQL operations helps in building real-world CRUD applications.</li>
+  </ul>
+
+  <p>By: Amanjot Singh URN 2302851</p>
+</div>
+<div id="day16" class="report">
+  <h3>Training Day 16 Report</h3>
+  <p>📅 Date: 23 July 2025</p>
+
+  <h4>Topic: VetsApp – Main Menu, Customer, Pet, and Consultation Management</h4>
+  <p>Day 16 focused on integrating the previously created modules (Customer, Pet, Consultation) into a single main application with menus and CRUD operations.</p>
+
+  <h4>Key Concepts and Explanation</h4>
+  <ol>
+    <li>
+      <strong>Main Menu:</strong>
+      <ul>
+        <li>Provides unified access to Customers, Pets, and Consultations.</li>
+        <li>User can select an option to manage Customers, Pets, or Consultations, or quit the app.</li>
+        <li>Tracks app usage duration using <code>datetime.datetime.today()</code>.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Customer Management Module:</strong>
+      <ul>
+        <li>Uses <code>Customer</code> class and <code>DBHelper</code> for database operations.</li>
+        <li>Features:
+          <ul>
+            <li>Add Customer</li>
+            <li>Update Customer</li>
+            <li>Delete Customer</li>
+            <li>View All Customers</li>
+            <li>View Customer by Phone</li>
+          </ul>
+        </li>
+        <li>Interactive inputs allow selective updates by preserving previous values if left blank.</li>
+        <li>Data displayed in tabular format using <code>tabulate</code>.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Pet Management Module:</strong>
+      <ul>
+        <li>Uses <code>Pet</code> class linked with <code>Customer</code> via <code>cid</code>.</li>
+        <li>Features:
+          <ul>
+            <li>Add Pet for a Customer</li>
+            <li>View All Pets</li>
+            <li>View Pets by Customer</li>
+            <li>Delete Pet</li>
+          </ul>
+        </li>
+        <li>Ensures that each Pet is linked to an existing Customer; prompts user to select Pet Id if multiple pets exist.</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Consultation Management Module:</strong>
+      <ul>
+        <li>Uses <code>Consultation</code> class linked with both Customer and Pet.</li>
+        <li>Features:
+          <ul>
+            <li>Add Consultation</li>
+            <li>View All Consultations</li>
+            <li>View Consultations by Date (planned)</li>
+            <li>View Consultations of a Customer's Pet</li>
+          </ul>
+        </li>
+        <li>Validates that consultations are only added for existing pets.</li>
+        <li>Interactive selection of Pet Id when multiple pets exist for a customer.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h4>Key Takeaways:</h4>
+  <ul>
+    <li>Integrated a multi-module application with a unified main menu.</li>
+    <li>Demonstrated OOP principles by separating Customer, Pet, and Consultation classes.</li>
+    <li>Implemented CRUD operations for all modules with MySQL database integration.</li>
+    <li>Used <code>tabulate</code> to present data neatly in the console.</li>
+    <li>Ensured relational integrity using foreign keys (<code>cid</code> in Pet, <code>cid</code> and <code>pid</code> in Consultation).</li>
+  </ul>
+
+  <p>By: Amanjot Singh URN 2302851</p>
+</div>
+<div id="day17" class="report">
+  <h3>Training Day 17 Report</h3>
+  <p>📅 Date: 25 July 2025</p>
+
+  <h4>Topic: Consultation Module in VetsApp</h4>
+  <p>Day 17 focused on implementing the <strong>Consultation</strong> class for the VetsApp project, which manages consultations between a Vet and a Customer's Pet.</p>
+
+  <h4>Database Structure</h4>
+  <pre>
+create table Consultation(
+    cnid int primary key auto_increment,
+    cid int,
+    pid int,
+    problem text,
+    heartrate int,
+    temperature float,
+    medicines text,        
+    createdon datetime,
+    FOREIGN KEY (cid) REFERENCES Customer(cid),
+    FOREIGN KEY (pid) REFERENCES Pet(pid)
+);
+  </pre>
+
+  <h4>Consultation Class Design</h4>
+  <ul>
+    <li><strong>Attributes:</strong> 
+      <ul>
+        <li>cnid (Consultation ID)</li>
+        <li>cid (Customer ID)</li>
+        <li>pid (Pet ID)</li>
+        <li>problem (description of the problem)</li>
+        <li>heartrate (integer)</li>
+        <li>temperature (float)</li>
+        <li>medicines (text)</li>
+        <li>createdon (datetime)</li>
+      </ul>
+    </li>
+    <li><strong>Methods:</strong>
+      <ul>
+        <li><code>read_consultation_data()</code>: Interactive input for problem, heart rate, temperature, medicines, and automatically records the current datetime.</li>
+        <li><code>get_insert_sql_query()</code>: Returns SQL query string to insert consultation into database.</li>
+        <li><code>get_consultation_sql_query(cid="", pid="")</code>: Returns SQL query to fetch consultations optionally filtered by Customer ID or Pet ID.</li>
+        <li><code>get_consultation_sql_query_by_date(date)</code>: Returns SQL query to fetch consultations for a specific date.</li>
+        <li><code>get_delete_sql_query()</code>: Returns SQL query to delete a consultation by cnid.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h4>Key Concepts & Takeaways:</h4>
+  <ul>
+    <li>Integrated the Consultation module with Customer and Pet via <code>cid</code> and <code>pid</code>.</li>
+    <li>Used <code>datetime</code> to track consultation creation time.</li>
+    <li>Implemented modular SQL queries for insert, delete, and conditional select operations.</li>
+    <li>Prepared the module for future expansion: updates, filtering by date, and relational queries.</li>
+    <li>Strengthened understanding of OOP in Python and relational database connectivity.</li>
+  </ul>
+
+  <p>By: Amanjot Singh URN 2302851</p>
+</div>
+<div id="day18" class="report">
+  <h3>Training Day 18 Report</h3>
+  <p>📅 Date: 29 July 2025</p>
+
+  <h4>Topic: MongoDB Integration for Customers in VetsApp</h4>
+  <p>Day 18 focused on integrating MongoDB as the backend database for the VetsApp project, specifically for storing Customer data.</p>
+
+  <h4>MongoDB Helper Class Design</h4>
+  <ul>
+  <ul>
+    <li><strong>Attributes:</strong>
+      <ul>
+        <li>db: MongoDB database instance</li>
+        <li>collection: MongoDB collection (default 'customer')</li>
+      </ul>
+    </li>
+    <li><strong>Methods:</strong>
+      <ul>
+        <li><code>insert(document)</code>: Inserts a document into the collection.</li>
+        <li><code>delete(query)</code>: Deletes a document matching the query.</li>
+        <li><code>fetch(query)</code>: Fetches documents matching the query (or all if empty).</li>
+        <li><code>update(document, query)</code>: Updates a document matching the query with new data.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h4>Customer Class Updates</h4>
+  <ul>
+    <li>Modified to work with MongoDB by converting instances to dictionaries using <code>vars()</code>.</li>
+    <li>Attributes: name, phone, email, age, gender, address, createdon.</li>
+    <li><code>read_customer_data()</code>: Interactive input to capture customer info; <code>createdon</code> automatically set using <code>datetime.datetime.today()</code>.</li>
+  </ul>
+
+  <h4>Operations Demonstrated:</h4>
+  <ul>
+    <li>Insert a new customer document into MongoDB.</li>
+    <li>Fetch a customer by email or phone using query filters.</li>
+    <li>Update customer information (e.g., name, phone, age) in MongoDB.</li>
+    <li>Delete a customer document using query.</li>
+  </ul>
+
+  <h4>Key Takeaways:</h4>
+  <ul>
+    <li>Introduced MongoDB as a NoSQL alternative to MySQL for storing Customer data.</li>
+    <li>Demonstrated CRUD operations (Create, Read, Update, Delete) using <code>pymongo</code>.</li>
+    <li>Learned to handle queries using Python dictionaries and ObjectId.</li>
+    <li>Prepared for a fully MongoDB-based backend integration for VetsApp.</li>
+  </ul>
+
+  <p>By: Amanjot Singh URN 2302851</p>
+</div>
+<div id="day19" class="report">
+  <h3>Training Day 19 Report</h3>
+  <p>📅 Date: 1 August 2025</p>
+
+  <h4>Topic: Flask Web Application for VetsApp</h4>
+  <p>Day 19 focused on converting the VetsApp project into a web application using <strong>Flask</strong> and integrating <strong>MongoDB</strong> as the backend for Vets, Customers, Pets, and Consultations.</p>
+
+  <h4>1. Flask Application Setup</h4>
+  <p>Learned how to set up a Flask project structure:</p>
+  <pre>
+from flask import Flask, render_template, request, redirect, session
+from pymongo import MongoClient
+import hashlib
+
+app = Flask(__name__)
+app.secret_key = "your_secret_key"
+
+# Connect to MongoDB
+client = MongoClient("mongodb://localhost:27017/")
+db = client.vetsapp
+  </pre>
+  <ul>
+    <li>Flask initialized with a secret key for session management.</li>
+    <li>MongoDB connection established using <code>pymongo</code>.</li>
+    <li>Project structured with separate templates and static folders.</li>
+  </ul>
+
+  <h4>2. User Authentication</h4>
+  <p>Implemented registration and login for Vets with secure password storage:</p>
+  <pre>
+# Password Hashing using hashlib
+password = request.form['password']
+hashed_password = hashlib.sha256(password.encode()).hexdigest()
+
+# Storing in MongoDB
+db.vets.insert_one({
+    "name": request.form['name'],
+    "email": request.form['email'],
+    "password": hashed_password
+})
+  </pre>
+  <ul>
+    <li>User registration checks for duplicate emails before inserting.</li>
+    <li>Login compares the hashed input password with the stored hash.</li>
+    <li>Session variable <code>session['vet_email']</code> used to track logged-in users.</li>
+  </ul>
+
+  <h4>3. CRUD Operations</h4>
+  <p>Implemented Create, Read, Update, Delete operations for Customers, Pets, and Consultations:</p>
+  <pre>
+# Example: Add a new Customer
+@app.route('/add_customer', methods=['POST'])
+def add_customer():
+    customer = {
+        "name": request.form['name'],
+        "email": request.form['email'],
+        "phone": request.form['phone']
+    }
+    db.customers.insert_one(customer)
+    return redirect('/customers')
+  </pre>
+  <ul>
+    <li>Used <code>Flask routes</code> for each CRUD operation.</li>
+    <li>Data validated before insertion (no empty critical fields).</li>
+    <li>Lists displayed using dynamic templates with <code>for</code> loops.</li>
+  </ul>
+
+  <h4>4. Session Management</h4>
+  <p>Maintained logged-in state for Vets:</p>
+  <pre>
+# Login Example
+session['vet_email'] = vet['email']  # Store logged-in vet
+
+# Logout Example
+session.pop('vet_email', None)
+return redirect('/login')
+  </pre>
+  <ul>
+    <li>Sessions ensure pages like dashboard, add/edit customer/pet/consultation are only accessible to logged-in vets.</li>
+    <li>Implemented redirect to login if a user tries to access protected pages without authentication.</li>
+  </ul>
+
+  <h4>5. Dynamic Templates</h4>
+  <p>Used <code>Jinja2</code> templates for dynamic content:</p>
+  <pre>
+<!-- customers.html -->
+{% for customer in customers %}
+<tr>
+    <td>{{ customer.name }}</td>
+    <td>{{ customer.email }}</td>
+    <td>{{ customer.phone }}</td>
+    <td>
+        <a href="/edit_customer/{{ customer._id }}">Edit</a>
+        <a href="/delete_customer/{{ customer._id }}">Delete</a>
+    </td>
+</tr>
+{% endfor %}
+  </pre>
+  <ul>
+    <li>Dynamic tables for Customers, Pets, and Consultations.</li>
+    <li>Feedback messages displayed after successful or failed operations.</li>
+    <li>Error handling templates for invalid inputs or actions.</li>
+  </ul>
+
+  <h4>6. Key Learnings & Takeaways:</h4>
+  <ul>
+    <li>Learned to integrate Flask with MongoDB for a complete web application.</li>
+    <li>Understood secure password storage using hashing and session management.</li>
+    <li>Practiced implementing CRUD operations with proper form validation.</li>
+    <li>Gained experience in dynamic HTML rendering with Jinja2 templates.</li>
+    <li>Handled routing, redirection, and user authentication in a real-world application.</li>
+  </ul>
+
+  <h4>Conclusion:</h4>
+  <p>Day 19 successfully converted the console-based VetsApp into a fully functional Flask web application with:</p>
+  <ul>
+    <li>Secure user authentication</li>
+    <li>Session management for vets</li>
+    <li>CRUD operations for Customers, Pets, and Consultations</li>
+    <li>Dynamic, user-friendly templates for web interface</li>
+    <li>Backend data storage and retrieval using MongoDB</li>
+  </ul>
+  <p>This setup laid the foundation for advanced topics like data security and web scraping on Day 20.</p>
+
+  <p>By: Amanjot Singh | URN: 2302851</p>
+  <button onclick="downloadPDF('day19', 'Day19_Report.pdf')">Download PDF</button>
+</div>
+
+  <div id="day20" class="report">
+  <h3>Training Day 20 Report</h3>
+  <p>📅 Date: 6 August 2025</p>
+
+  <h4>Topics Covered:</h4>
+  <ul>
+    <li>Encrypting Data using Python's <code>hashlib</code> module</li>
+    <li>Web Scraping using <code>requests</code> and <code>BeautifulSoup</code></li>
+  </ul>
+
+  <h4>1. Data Encryption</h4>
+  <p>Learned how to securely store passwords using SHA-256 hashing:</p>
+  <pre>
+import hashlib
+
+password = input("Enter the Password: ")
+password = password.encode('utf-8')  # Encode to UTF-8
+password = hashlib.sha256(password).hexdigest()
+print(password)
+  </pre>
+  <ul>
+    <li>Input password is converted into a byte string</li>
+    <li>SHA-256 hashing ensures secure storage of credentials</li>
+    <li>Output is a 64-character hexadecimal hash</li>
+  </ul>
+
+  <h4>2. Web Scraping</h4>
+  <p>Scraped health news and IPL cricket points table:</p>
+  <ul>
+    <li>Used <code>requests.get()</code> to fetch web page HTML</li>
+    <li>Parsed HTML with <code>BeautifulSoup</code></li>
+    <li>Extracted specific elements using tags and classes</li>
+    <li>Processed and stored data into structured formats like CSV</li>
+  </ul>
+
+  <h5>Example: Health News</h5>
+  <pre>
+url = "https://www.indiatoday.in/health"
+response = requests.get(url)
+soup = BeautifulSoup(response.text, "html.parser")
+tags = soup.find_all("div", class_="B1S3_content__wrap__9mSB6")
+for tag in tags:
+    print(tag.text)
+  </pre>
+
+  <h5>Example: IPL Points Table 2022</h5>
+  <pre>
+url = "https://www.espncricinfo.com/series/indian-premier-league-2022-1298423/points-table-standings"
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+
+teams = soup.find_all('span', class_="ds-text-tight-s ds-font-bold ds-uppercase ds-text-left ds-text-typo")
+wins = soup.find_all('td', class_="ds-w-0 ds-whitespace-nowrap ds-min-w-max")
+
+# Process and save into CSV
+file = open("ipl-data-2022.csv", "a")
+header = "TEAMS,M,W,L,T,N/R,NRR,For,Against\n"
+file.write(header)
+...
+file.write(csv)
+  </pre>
+
+  <h4>Key Learnings & Takeaways:</h4>
+  <ul>
+    <li>Understood the importance of password hashing for security.</li>
+    <li>Practiced web scraping techniques to extract structured data from websites.</li>
+    <li>Learned how to clean and organize scraped data for CSV export.</li>
+    <li>Combined multiple Python modules for practical real-world tasks: <code>hashlib</code>, <code>requests</code>, <code>BeautifulSoup</code>, and file operations.</li>
+  </ul>
+
+  <h4>Conclusion:</h4>
+  <p>With Day 20, the training series concluded successfully, covering:</p>
+  <ul>
+    <li>Object-Oriented Programming in Python with VetsApp modules (Customer, Pet, Consultation)</li>
+    <li>Database integration with MySQL and MongoDB</li>
+    <li>Building a complete Flask Web Application with authentication, session management, and dynamic CRUD operations</li>
+    <li>Data security practices using password hashing</li>
+    <li>Real-world web data extraction using web scraping techniques</li>
+  </ul>
+  <p>By completing these 20 days, a solid foundation in Python programming, web app development, database handling, and data security has been established.</p>
+
+  <p>By: Amanjot Singh URN 2302851</p>
+</div>
